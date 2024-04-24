@@ -23,8 +23,35 @@
         </div>
         <div class="links">
             <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a class="link" href="#">Login</a></li>
+                <li><a class="link" href="#">Cart</a>
+                    <div class="tab">
+                        <ul>
+                            <?php
+                            for ($i = 0; $i < 5; $i++) {
+                                ?>
+                                <li>
+                                    <div class="cart">
+                                        <div class="cart-items img">
+                                            <img src="images/cookingoil.jpeg" alt="" srcset="" width="50px" height="50px">
+                                        </div>
+                                        <div class="cart-items name">Cooking Oil</div>
+                                        <div class="cart-items close">
+                                            <input type="submit" value="X">
+                                        </div>
+                                    </div>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                            <li>
+                                <a href="checkout.php" class="checkout-btn">
+                                    Proceed to Checkout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
