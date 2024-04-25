@@ -5,21 +5,57 @@
             <form method="post">
                 <img src="images/cookingoil.jpeg" width="100px" height="100px" alt="" srcset="">
                 <h3>Create an account</h3>
+                <?php
+                if (isset($_POST['submit'])) {
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $contact = $_POST['contact'];
+                    $gender = $_POST['gender'];
+                    $address = $_POST['address'];
+                    $password = $_POST['password'];
+                    $cpassword = $_POST['cpassword'];
+
+                    if ($password === $cpassword) {
+                        $select = mysqli_query($conn, "SELECT * FROM tbl_client WHERE cEmail='" . $email . "'");
+                        if (mysqli_fetch_array($select)) {
+                            echo "<div class='error'>Ooops! The email alraedy Exist</div>";
+                        } else {
+                            $insert = mysqli_query($conn, "INSERT INTO  tbl_client(cl_id,client,cEmail,contact,g_id,a_id,cPass) 
+                            VALUES(null, '" . $name . "', '" . $email . "', '" . $contact . "', '" . $gender . "', '" . $address . "', '" . md5($password) . "')");
+                            if ($insert) {
+                                echo "<div class='success'>Congratulations, your account has been Created Successfuly.</div>";
+                            }
+                        }
+                    } else {
+                        echo "<div class='error'>Oops! Password does not match!</div>";
+                    }
+                }
+                ?>
                 <input type="name" name="name" id="" placeholder="Enter Full Name" autofocus required>
-                <input type="email" name="email" id="" placeholder="example@gmail.com" autofocus required>
-                <input type="text" name="contact" id="" placeholder="Ex: 075276482684" autofocus required>
-                <select name="gender" id="">
+                <input type="email" name="email" id="" placeholder="example@gmail.com" required>
+                <input type="text" name="contact" id="" placeholder="Ex: 075276482684" required>
+                <select name="gender" id="" required>
                     <option value="">Select your gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Femala</option>
+                    <?php
+                    $select = mysqli_query($conn, "SELECT * FROM tbl_gender");
+                    while ($row = mysqli_fetch_assoc($select)) {
+                        ?>
+                        <option value="<?php echo $row['g_id']; ?>"><?php echo $row['gender']; ?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
                 <br>
-                <select name="address" id="">
+                <select name="address" id="" required>
                     <option value="">Select your Address</option>
-                    <option value="1">Kabalagala</option>
-                    <option value="2">Nsambya</option>
-                    <option value="3">Kansana</option>
-                    <option value="4">Munyonyo</option>
+                    <?php
+                    $select = mysqli_query($conn, "SELECT * FROM tbl_address");
+                    while ($row = mysqli_fetch_assoc($select)) {
+                        ?>
+                        <option value="<?php echo $row['a_id']; ?>"><?php echo $row['address']; ?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
                 <br>
                 <input type="password" name="password" id="" placeholder="Password" required>

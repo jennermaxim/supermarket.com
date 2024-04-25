@@ -490,6 +490,26 @@ body {
     background-color: rgb(10, 90, 10);
 }
 
+.success {
+    color: green;
+    text-align: center;
+    background-color: rgb(172, 255, 172);
+    padding: 10px;
+    border-radius: 16px;
+    width: 80%;
+    margin: 5px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    background-color: rgb(255, 212, 132);
+    padding: 10px;
+    border-radius: 16px;
+    width: 80%;
+    margin: 5px;
+}
+
 /* FOOTER STYLE */
 
 footer {
