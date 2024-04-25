@@ -20,6 +20,11 @@ body {
     width: 100%;
 }
 
+.header .logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .header .logo h1 {
     padding: 0;
     margin: 0;
@@ -181,6 +186,7 @@ body {
     background-color: rgb(245, 231, 231);
     border-radius: 20px;
     width: 100%;
+    margin: 20px 0;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -225,7 +231,7 @@ body {
 
 .container .section .items .item .name-details .btn {
     width: 100%;
-    background-color: rgb(101, 212, 91);
+    background-color: aqua;
     border-radius: 5px;
     padding: 5px;
     margin-top: 10px;
@@ -236,7 +242,7 @@ body {
 /* CHEKOUT STYLE */
 .container .orders {
     width: 55%;
-    height: calc(100vh - 224px);
+    height: calc(100vh - 124px);
     border-radius: 16px;
     margin: 2%;
     float: left;
@@ -244,7 +250,7 @@ body {
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container .orders .header{
+.container .orders .header {
     padding: 0;
     margin: 0;
     background-color: gainsboro;
@@ -256,7 +262,7 @@ body {
     justify-content: center;
 }
 
-.container .orders .header h1{
+.container .orders .header h1 {
     padding: 0;
     margin: 0;
 }
@@ -286,6 +292,8 @@ body {
 
 .container .orders .tab ul li .cart {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container .orders .tab ul li .cart .cart-items {
@@ -314,23 +322,23 @@ body {
     background-color: transparent;
 }
 
-.bottom{
+.bottom {
     margin-bottom: 0px;
     width: 100%;
 }
 
-.bottom h1{
+.bottom h1 {
     padding: 16px;
     text-align: right !important;
     margin-right: 16px;
 }
 
-.bottom h1 span{
+.bottom h1 span {
     background-color: #fff;
 
 }
 
-.container .cashout{
+.container .cashout {
     float: left;
     width: 37%;
     /* box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1); */
@@ -340,26 +348,147 @@ body {
     /* border-radius: 16px; */
 }
 
-.container .cashout .profile{
+.container .cashout .profile {
     float: left;
     width: 100%;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
-    padding: 2%;
     /* margin-top: 2%; */
     height: calc(100vh - 360px);
     border-radius: 16px;
 }
-.container .cashout .payment{
+
+.container .cashout .payment {
     float: left;
     width: 100%;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
-    padding: 2%;
     margin-top: 6%;
-    height: calc(100vh - 460px);
+    height: calc(100vh - 360px);
     border-radius: 16px;
 }
 
+/* PROFILE STYLE */
+.profile table {
+    width: 100%;
+    height: 100% !important;
+}
 
+.profile table .th1 {
+    background-color: gray;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.profile table tr .th2 {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.profile table tr .th3 {
+    text-align: center;
+    background-color: rgb(167, 144, 144);
+}
+
+/* PAYMENT METHODE STAYLE */
+.payment h1 {
+    text-align: center;
+    padding: 6px;
+    font-size: 20px;
+}
+
+.payment form {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.payment form .pay-radio {
+    float: left;
+    margin-left: 130px;
+}
+
+.payment form .pay-span {
+    float: left;
+    margin-left: 20px;
+}
+
+.payment form .pay-btn {
+    width: 60%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    background-color: green;
+    color: #fff;
+    border-radius: 16px;
+    border-style: none;
+    margin-top: 10px;
+    outline: none;
+}
+
+.payment form .pay-btn:hover {
+    background-color: rgb(49, 234, 49);
+    box-shadow: 0px 0px 10px 10px rgba(49, 234, 49, 0.1);
+}
+
+/* LOGIN STYLE */
+.container .height {
+    height: calc(100vh - 175px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 231, 231);
+    border-radius: 20px;
+    width: 40%;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* FORM */
+.container .section1 form {
+    width: 100%;
+    padding: 20px;
+}
+
+.container .section1 form img {
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 255, 0.1);
+}
+
+.container .section1 form h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.container .section1 form input,
+.container .section1 form select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    outline: none;
+    border-radius: 16px;
+    border-style: none;
+}
+
+.container .section1 form input:focus {
+    outline: 1px solid blue;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 255, 0.1);
+}
+
+.container .section1 form .login-btn {
+    cursor: pointer;
+    background-color: green;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container .section1 form .login-btn:hover {
+    background-color: rgb(10, 90, 10);
+}
 
 /* FOOTER STYLE */
 

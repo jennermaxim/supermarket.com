@@ -1,3 +1,4 @@
+<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +10,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body oncontextmenu="return false">
     <nav class="header">
         <div class="logo">
-            <h1>SUPERMARKET</h1>
+            <a href="index.php">
+                <h1>SUPERMARKET</h1>
+            </a>
         </div>
         <div class="search">
             <form method="post">
@@ -23,7 +26,7 @@
         </div>
         <div class="links">
             <ul>
-                <li><a class="link" href="#">Login</a></li>
+                <li><a class="link" href="login.php">Login</a></li>
                 <li><a class="link" href="#">Cart</a>
                     <div class="tab">
                         <ul>

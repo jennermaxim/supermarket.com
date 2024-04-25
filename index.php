@@ -25,13 +25,13 @@
         </div>
     </div>
     <div class="section">
-        <h1>SECTION A</h1>
+        <h1>SECTION B</h1>
         <div class="items">
             <?php
             for ($count = 0; $count < 5; $count++) {
                 ?>
                 <div class="item">
-                    <img src="images/cookingoil.jpeg" alt="">
+                    <img src="images/rice.jpg" alt="">
                     <hr>
                     <div class="name-details">
                         <h3>Cooking Oil</h3>
@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="section">
-        <h1>SECTION B</h1>
+        <h1>SECTION C</h1>
         <div class="items">
             <?php
             for ($count = 0; $count < 5; $count++) {
