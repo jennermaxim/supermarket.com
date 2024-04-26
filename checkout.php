@@ -1,4 +1,9 @@
 <?php include 'includes/header.php'; ?>
+<?php
+if (!isset($_SESSION['id'])) {
+    header('location:login.php');
+}
+?>
 <div class="container">
     <div class="orders">
         <div class="header">
@@ -38,21 +43,31 @@
                 </tr>
                 <th class="th3">LABLE</th>
                 <th class="th3">INOFORMATION</th>
+                <?php
+                $select = mysqli_query($conn, "SELECT * FROM tbl_client, tbl_gender, tbl_address 
+                WHERE(tbl_client.g_id = tbl_gender.g_id AND tbl_client.a_id = tbl_address.a_id 
+                AND tbl_client.cl_id = '" . $_SESSION['id'] . "')");
+                $row = mysqli_fetch_array($select);
+                ?>
                 <tr>
                     <th class="th2">Name:</th>
-                    <td>Jenner Maxim</td>
+                    <td><?php echo $row['client']; ?></td>
                 </tr>
                 <tr>
                     <th class="th2">Contact:</th>
-                    <td>07573937478</td>
+                    <td><?php echo $row['contact']; ?></td>
                 </tr>
                 <tr>
                     <th class="th2">Email:</th>
-                    <td>maxim@gmail.com</td>
+                    <td><?php echo $row['cEmail']; ?></td>
+                </tr>
+                <tr>
+                    <th class="th2">Gender:</th>
+                    <td><?php echo $row['gender']; ?></td>
                 </tr>
                 <tr>
                     <th class="th2">Address:</th>
-                    <td>Nsambya</td>
+                    <td><?php echo $row['address']; ?></td>
                 </tr>
             </table>
         </div>

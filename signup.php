@@ -63,7 +63,7 @@
                 <br>
                 <input type="submit" name="submit" class="login-btn" value="Sign Up">
                 <br>
-                <span>Have an account already? <a href="signup.php">Login</a></span>
+                <span>Have an account already? <a href="login.php">Login</a></span>
             </form>
         </div>
     </center>

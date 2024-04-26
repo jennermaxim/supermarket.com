@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,35 +27,47 @@
         </div>
         <div class="links">
             <ul>
-                <li><a class="link" href="login.php">Login</a></li>
-                <li><a class="link" href="#">Cart</a>
-                    <div class="tab">
-                        <ul>
-                            <?php
-                            for ($i = 0; $i < 5; $i++) {
+                <?php
+                if (isset($_SESSION['id'])) {
+                    ?>
+                    <li><a class="link" href="profile.php"><?php echo $_SESSION['client']; ?></a></li>
+                    <li><a class="link" href="logout.php">Logout</a></li>
+                    <li><a class="link" href="#">Cart</a>
+                        <div class="tab">
+                            <ul>
+                                <?php
+                                for ($i = 0; $i < 5; $i++) {
+                                    ?>
+                                    <li>
+                                        <div class="cart">
+                                            <div class="cart-items img">
+                                                <img src="images/cookingoil.jpeg" alt="" srcset="" width="50px" height="50px">
+                                            </div>
+                                            <div class="cart-items name">Cooking Oil</div>
+                                            <div class="cart-items close">
+                                                <input type="submit" value="X">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <?php
+                                }
                                 ?>
                                 <li>
-                                    <div class="cart">
-                                        <div class="cart-items img">
-                                            <img src="images/cookingoil.jpeg" alt="" srcset="" width="50px" height="50px">
-                                        </div>
-                                        <div class="cart-items name">Cooking Oil</div>
-                                        <div class="cart-items close">
-                                            <input type="submit" value="X">
-                                        </div>
-                                    </div>
+                                    <a href="checkout.php" class="checkout-btn">
+                                        Proceed to Checkout
+                                    </a>
                                 </li>
-                                <?php
-                            }
-                            ?>
-                            <li>
-                                <a href="checkout.php" class="checkout-btn">
-                                    Proceed to Checkout
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li><a class="link" href="login.php">Login</a></li>
+
+                    <?php
+                }
+                ?>
             </ul>
         </div>
     </nav>
