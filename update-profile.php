@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php' ?>
 <div class="container">
     <center>
         <div class="section1">
@@ -31,37 +31,40 @@
                     }
                 }
                 ?>
-                <input type="name" name="name" id="" placeholder="Enter Full Name" autofocus required>
-                <input type="email" name="email" id="" placeholder="example@gmail.com" required>
-                <input type="text" name="contact" id="" placeholder="Ex: 075276482684" required>
+                <?php
+                $select = mysqli_query($conn, "SELECT * FROM tbl_client, tbl_gender, tbl_address 
+                WHERE(tbl_client.g_id = tbl_gender.g_id AND tbl_client.a_id = tbl_address.a_id 
+                AND tbl_client.cl_id = '" . $_SESSION['id'] . "')");
+                $row = mysqli_fetch_array($select);
+                ?>
+                <input type="name" name="name" id="" value="<?php echo $row['client']; ?>" autofocus required>
+                <input type="email" name="email" id="" value="<?php echo $row['cEmail']; ?>" required>
+                <input type="text" name="contact" id="" value="<?php echo $row['contact']; ?>" required>
                 <select name="gender" id="" required>
-                    <option value="">Select your gender</option>
+                    <option value="<?php echo $row['g_id']; ?>"><?php echo $row['gender']; ?></option>
                     <?php
-                    $select = mysqli_query($conn, "SELECT * FROM tbl_gender");
-                    while ($row = mysqli_fetch_assoc($select)) {
+                    $select_gender = mysqli_query($conn, "SELECT * FROM tbl_gender");
+                    while ($row_gender = mysqli_fetch_assoc($select_gender)) {
                         ?>
-                        <option value="<?php echo $row['g_id']; ?>"><?php echo $row['gender']; ?></option>
+                        <option value="<?php echo $row_gender['g_id']; ?>"><?php echo $row_gender['gender']; ?></option>
                         <?php
                     }
                     ?>
                 </select>
                 <br>
                 <select name="address" id="" required>
-                    <option value="">Select your Address</option>
+                    <option value="<?php echo $row['a_id']; ?>"><?php echo $row['address']; ?></option>
                     <?php
-                    $select = mysqli_query($conn, "SELECT * FROM tbl_address");
-                    while ($row = mysqli_fetch_assoc($select)) {
+                    $select_address = mysqli_query($conn, "SELECT * FROM tbl_address");
+                    while ($row_address = mysqli_fetch_assoc($select_address)) {
                         ?>
-                        <option value="<?php echo $row['a_id']; ?>"><?php echo $row['address']; ?></option>
+                        <option value="<?php echo $row_address['a_id']; ?>"><?php echo $row_address['address']; ?></option>
                         <?php
                     }
                     ?>
-                </select>
+                </select>               
                 <br>
-                <input type="password" name="password" id="" placeholder="Password" required>
-                <input type="password" name="cpassword" id="" placeholder="Confirm Password" required>
-                <br>
-                <input type="submit" name="submit" class="login-btn" value="Sign Up">
+                <input type="submit" name="submit" class="login-btn" value="Update">
                 <br>
                 <span>Have an account already? <a href="login.php">Login</a></span>
             </form>

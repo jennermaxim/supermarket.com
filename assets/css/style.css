@@ -520,3 +520,43 @@ footer {
     padding: 16px;
     font-size: 12px;
 }
+
+/* PROFILE STYLE */
+.main .profile{
+    display: flex;
+    padding: 4%;
+    border-radius: 16px;
+    background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .profile .profile-img img{
+    width: 500px;
+    border-radius: 16px;
+}
+
+.main .profile .profile-details{
+    padding-left: 50px;
+}
+
+.main .profile .profile-details >*{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.main .profile .profile-details .update-delete a{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main .profile .profile-details .update-delete .update{
+    background-color: green;
+}
+
+.main .profile .profile-details .update-delete .delete{
+    background-color: red;
+}
