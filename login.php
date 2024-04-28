@@ -1,4 +1,9 @@
-<?php include 'includes/header.php' ?>
+<?php include 'includes/header.php';
+if ($_SESSION['id']) {
+    echo "<script>window.location.href = 'index.php';</script>";
+}
+?>
+
 <div class="container">
     <center class="height">
         <div class="section1">

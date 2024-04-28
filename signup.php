@@ -23,7 +23,18 @@
                             $insert = mysqli_query($conn, "INSERT INTO  tbl_client(cl_id,client,cEmail,contact,g_id,a_id,cPass) 
                             VALUES(null, '" . $name . "', '" . $email . "', '" . $contact . "', '" . $gender . "', '" . $address . "', '" . md5($password) . "')");
                             if ($insert) {
-                                echo "<div class='success'>Congratulations, your account has been Created Successfuly.</div>";
+                                $select = mysqli_query($conn, "SELECT * FROM tbl_client 
+                                WHERE cEmail = '" . $email . "' and cPass = '" . $password . "'");
+                                if ($row = mysqli_fetch_array($select)) {
+                                    $_SESSION['id'] = $row['cl_id'];
+                                    $_SESSION['cEmail'] = $row['cEmail'];
+                                    $_SESSION['client'] = $row['client'];
+                                    echo "<script>window.location.href = 'index.php';</script>";
+                                } else {
+                                    header('location:login.php');
+                                }
+                            } else {
+                                echo "<div class='error'>Oops! Failed to create your account! Please try again later!</div>";
                             }
                         }
                     } else {

@@ -12,22 +12,14 @@
                     $contact = $_POST['contact'];
                     $gender = $_POST['gender'];
                     $address = $_POST['address'];
-                    $password = $_POST['password'];
-                    $cpassword = $_POST['cpassword'];
 
-                    if ($password === $cpassword) {
-                        $select = mysqli_query($conn, "SELECT * FROM tbl_client WHERE cEmail='" . $email . "'");
-                        if (mysqli_fetch_array($select)) {
-                            echo "<div class='error'>Ooops! The email alraedy Exist</div>";
-                        } else {
-                            $insert = mysqli_query($conn, "INSERT INTO  tbl_client(cl_id,client,cEmail,contact,g_id,a_id,cPass) 
-                            VALUES(null, '" . $name . "', '" . $email . "', '" . $contact . "', '" . $gender . "', '" . $address . "', '" . md5($password) . "')");
-                            if ($insert) {
-                                echo "<div class='success'>Congratulations, your account has been Created Successfuly.</div>";
-                            }
-                        }
+                    $update = mysqli_query($conn, "UPDATE tbl_client 
+                    SET client = '" . $name . "', cEmail = '" . $email . "', contact = '" . $contact . "', g_id = '" . $gender . "', a_id = '" . $address . "'
+                    WHERE cl_id = '" . $_SESSION['id'] . "'");
+                    if ($update) {
+                        echo "<script>window.location.href = 'profile.php';</script>";
                     } else {
-                        echo "<div class='error'>Oops! Password does not match!</div>";
+                        echo "<div class='error'>Ooops!,Failed to update your profile!</div>";
                     }
                 }
                 ?>
@@ -62,11 +54,10 @@
                         <?php
                     }
                     ?>
-                </select>               
+                </select>
                 <br>
                 <input type="submit" name="submit" class="login-btn" value="Update">
                 <br>
-                <span>Have an account already? <a href="login.php">Login</a></span>
             </form>
         </div>
     </center>
