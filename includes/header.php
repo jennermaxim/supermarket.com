@@ -9,6 +9,8 @@
     <title>Home</title>
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsiveness.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body oncontextmenu="return false">
@@ -26,6 +28,7 @@
             </form>
         </div>
         <div class="links">
+            <img class="menu" src="images/menu32.png" alt="">
             <ul>
                 <?php
                 if (isset($_SESSION['id'])) {

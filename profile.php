@@ -23,7 +23,9 @@ if (!isset($_SESSION['id'])) {
             <div class="address">Address: <span><?Php echo $row['address']; ?></span></div>
             <div class="update-delete">
                 <a href="update-profile.php?client=<?php echo $_SESSION['id']; ?>" class="update">Update Profile</a>
-                <a href="delete-profile.php?client=<?php echo $_SESSION['id']; ?>" class="delete">Delete Profile</a>
+                <a href="delete-profile.php?client=<?php echo $_SESSION['id']; ?>"
+                    onclick="return confirm('Are you sure you want to delete your account?');" class="delete">Delete
+                    Profile</a>
             </div>
         </div>
     </div>

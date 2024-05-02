@@ -4,7 +4,7 @@ if (!isset($_SESSION['id'])) {
     header('location:login.php');
 }
 ?>
-<div class="container">
+<div class="container checkout-mobile">
     <div class="orders">
         <div class="header">
             <h1>YOUR ORDERS</h1>

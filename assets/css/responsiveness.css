@@ -1,0 +1,110 @@
+@media screen and (max-width: 440px) {
+    /* HEADER */
+    .header .search {
+        display: none;
+    }
+
+    .header .links img{
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 5px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .header .links ul{
+        display: none;
+    }
+
+    .header .links .menu-ul{
+        display: block;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        align-items: end;
+        padding: 10px;
+        background-color: rgb(41, 35, 35);
+        z-index: 999;
+    }
+
+    .header .links ul li .link{
+        display: block;
+        color: #fff;
+        background-color: rgb(41, 35, 35);
+    
+    }
+
+    /* HOME */
+    .container .section .items .item {
+        width: 95%;
+    }
+
+    .container .section .items .item img {
+        width: 100%;
+    }
+
+    /* LOGIN */
+    .container .height{
+        height: calc(100svh - 130px);
+    }
+    .container .section1{
+        width: 96%;
+    }
+
+    /* PROFILE */
+    .main .profile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main .profile .profile-img img{
+        width: 100%;
+    }
+
+    .main .profile .profile-details{
+        margin: 0;
+        padding: 0;
+    }
+
+    .main .profile .profile-details .update-delete{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main .profile .profile-details .update-delete a{
+        margin: 10px;
+    }
+
+    /* CASHOUT */
+    .checkout-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkout-mobile .orders{
+        width: 96%;
+        height: calc(100svh - 250px);
+    }
+
+    .container .orders .tab ul{
+        width: 92%;
+    }
+
+    .checkout-mobile .cashout{
+        width: 96%;
+        height: auto;
+    }
+
+    .checkout-mobile .cashout .payment{
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    /* UPDATE */
+    .update-page{
+        height: calc(100svh - 110px);
+    }
+}

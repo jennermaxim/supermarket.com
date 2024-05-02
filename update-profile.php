@@ -1,10 +1,10 @@
 <?php include 'includes/header.php' ?>
-<div class="container">
+<div class="container update-page">
     <center>
         <div class="section1">
             <form method="post">
                 <img src="images/cookingoil.jpeg" width="100px" height="100px" alt="" srcset="">
-                <h3>Create an account</h3>
+                <h3>Update your account</h3>
                 <?php
                 if (isset($_POST['submit'])) {
                     $name = $_POST['name'];

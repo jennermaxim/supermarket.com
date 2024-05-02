@@ -522,7 +522,7 @@ footer {
 }
 
 /* PROFILE STYLE */
-.main .profile{
+.main .profile {
     display: flex;
     padding: 4%;
     border-radius: 16px;
@@ -531,21 +531,21 @@ footer {
     align-items: center;
 }
 
-.main .profile .profile-img img{
+.main .profile .profile-img img {
     width: 500px;
     border-radius: 16px;
 }
 
-.main .profile .profile-details{
+.main .profile .profile-details {
     padding-left: 50px;
 }
 
-.main .profile .profile-details >*{
+.main .profile .profile-details>* {
     padding: 15px;
     font-size: 20px;
 }
 
-.main .profile .profile-details .update-delete a{
+.main .profile .profile-details .update-delete a {
     text-decoration: none;
     padding: 10px;
     border-radius: 16px;
@@ -553,10 +553,10 @@ footer {
     cursor: pointer;
 }
 
-.main .profile .profile-details .update-delete .update{
+.main .profile .profile-details .update-delete .update {
     background-color: green;
 }
 
-.main .profile .profile-details .update-delete .delete{
+.main .profile .profile-details .update-delete .delete {
     background-color: red;
 }
