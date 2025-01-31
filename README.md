@@ -1,1 +1,1 @@
-# Super Market Management System
+# Supermarket Management System
