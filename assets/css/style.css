@@ -514,11 +514,15 @@ body {
 
 footer {
     background-color: rgb(41, 35, 35);
-    color: #fff;
+    color: #ccc;
     text-align: center;
     align-items: center;
     padding: 16px;
     font-size: 12px;
+}
+
+footer div a{
+    color: aqua;
 }
 
 /* PROFILE STYLE */
