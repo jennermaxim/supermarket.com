@@ -1,5 +1,4 @@
 <?php include 'includes/header.php'; ?>
-
 <div class="container">
     <div class="section">
         <h1>SECTION A</h1>

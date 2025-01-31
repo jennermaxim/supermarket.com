@@ -28,7 +28,7 @@
             </form>
         </div>
         <div class="links">
-            <img class="menu" src="images/menu32.png" alt="">
+            <!-- <img class="menu" src="images/menu32.png" alt=""> -->
             <ul>
                 <?php
                 if (isset($_SESSION['id'])) {
